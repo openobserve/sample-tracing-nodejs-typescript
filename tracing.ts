@@ -17,6 +17,7 @@ const sdk = new opentelemetry.NodeSDK({
     },
   }),
   instrumentations: [getNodeAutoInstrumentations()],
+  serviceName: "nodejs-typescript-service",
 });
 
 sdk.start();
