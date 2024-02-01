@@ -11,9 +11,10 @@ diag.setLogger(new DiagConsoleLogger(), DiagLogLevel.INFO);
 const sdk = new opentelemetry.NodeSDK({
   // traceExporter: new opentelemetry.tracing.ConsoleSpanExporter(),
   traceExporter: new OTLPTraceExporter({
-    url: "https://alpha1.gke.zinclabs.dev/api/default/traces",
+    url: "http://127.0.0.1:5080/api/default/v1/traces",
     headers: {
-      Authorization: "Basic cm9vdEBleGFtcGxlLmNvbTpDb21wbGV4cGFzcyMxMjM=",
+      Authorization: "Basic cm9vdEBleGFtcGxlLmNvbTpUYjBZbE1VZTZKWHpBaENH",
+      "stream-name": "default"
     },
   }),
   instrumentations: [getNodeAutoInstrumentations()],
